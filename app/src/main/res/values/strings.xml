@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TopNews</string>
+    <string name="loading">Loading</string>
+    <string name="title_name">Title Name</string>
+    <string name="title">Title</string>
+    <string name="section_name">Section Name</string>
+    <string name="date">2017/02/05</string>
+</resources>
