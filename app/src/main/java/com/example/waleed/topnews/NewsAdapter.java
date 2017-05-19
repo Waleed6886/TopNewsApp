@@ -27,12 +27,10 @@ import java.util.List;
 
 public class NewsAdapter extends ArrayAdapter<News> {
 
-    private ArrayList<News> news = new ArrayList<>();
 
     public NewsAdapter(Context context, List<News> news) {
         super(context, 0, news);
     }
-
 
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -42,7 +40,7 @@ public class NewsAdapter extends ArrayAdapter<News> {
                     .inflate(R.layout.list_item, parent , false);
         }
         // Get the News object located at this position in the list
-        News currentNews = news.get(position);
+        News currentNews = getItem(position);
         // Find the TextView in the list_item.xml layout with the ID title_name
         TextView titleTextView = (TextView) listItemView.findViewById(R.id.title);
         // Get the news name from the current News object and
@@ -62,13 +60,6 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
         return listItemView;
     }
-    @Override
-    public int getCount() {
-        return news==null?0:news.size();
-    }
 
-    public void setNews(List<News> data){
-        news.addAll(data);
-        notifyDataSetChanged();
-    }
+
 }

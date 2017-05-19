@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         newsAdapter = new NewsAdapter(this, new ArrayList<News>());
 
         //Get a reference to the ListView, and attach the adapter to the listView.
@@ -45,7 +46,6 @@ public class MainActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Find the current earthquake that was clicked on
                 News currentNews = newsAdapter.getItem(position);
-
                 // Convert the String URL into a URI object (to pass into the Intent constructor)
                 Uri newsUri = Uri.parse(currentNews.getUrl());
 
@@ -90,7 +90,8 @@ public class MainActivity extends AppCompatActivity
                     "No News Available", Toast.LENGTH_LONG).show();
             return;
         }
-        newsAdapter.setNews(data);
+
+        newsAdapter.addAll(data);
 
     }
 
